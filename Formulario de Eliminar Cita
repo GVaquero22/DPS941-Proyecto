@@ -1,0 +1,465 @@
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'formulario_eliminar_citas_model.dart';
+export 'formulario_eliminar_citas_model.dart';
+
+class FormularioEliminarCitasWidget extends StatefulWidget {
+  const FormularioEliminarCitasWidget({Key? key}) : super(key: key);
+
+  @override
+  _FormularioEliminarCitasWidgetState createState() =>
+      _FormularioEliminarCitasWidgetState();
+}
+
+class _FormularioEliminarCitasWidgetState
+    extends State<FormularioEliminarCitasWidget> {
+  late FormularioEliminarCitasModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => FormularioEliminarCitasModel());
+
+    _model.pacientetController ??= TextEditingController();
+    _model.medicotController ??= TextEditingController();
+    _model.medicamentostController ??= TextEditingController();
+    _model.sintomastController ??= TextEditingController();
+    _model.fechayhoratController ??= TextEditingController();
+    _model.costotController ??= TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          automaticallyImplyLeading: false,
+          title: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 14),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Flexible(
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        'assets/images/Encabezado_1.png',
+                        width: 710,
+                        height: 113,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [],
+          centerTitle: true,
+          elevation: 0,
+        ),
+      ),
+      body: SafeArea(
+        top: true,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                    child: Text(
+                      'Eliminar Cita',
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Poppins',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 22,
+                              ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.pacientetController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Paciente:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator:
+                    _model.pacientetControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.medicotController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Medico:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator:
+                    _model.medicotControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.medicamentostController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Medicamentos:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator: _model.medicamentostControllerValidator
+                    .asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.sintomastController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Sintomas:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator:
+                    _model.sintomastControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.fechayhoratController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Fecha y Hora:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator:
+                    _model.fechayhoratControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 16),
+              child: TextFormField(
+                controller: _model.costotController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'Costo:',
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0xFF005F96),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x00000000),
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  contentPadding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium,
+                maxLines: null,
+                validator:
+                    _model.costotControllerValidator.asValidator(context),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 12),
+              child: FlutterFlowDropDown<String>(
+                controller: _model.tipopagotValueController ??=
+                    FormFieldController<String>(
+                  _model.tipopagotValue ??= 'Tipo de Pago',
+                ),
+                options: [
+                  'Efectivo',
+                  'Tarjeta de Credito/Debito',
+                  'Transferencia',
+                  'QR / KASH',
+                  'NIU',
+                  ''
+                ],
+                onChanged: (val) => setState(() => _model.tipopagotValue = val),
+                width: double.infinity,
+                height: 56,
+                textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                hintText: 'Tipo de Pago',
+                icon: Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  size: 15,
+                ),
+                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                elevation: 2,
+                borderColor: Color(0xFF005F96),
+                borderWidth: 2,
+                borderRadius: 8,
+                margin: EdgeInsetsDirectional.fromSTEB(20, 4, 12, 4),
+                hidesUnderline: true,
+                isSearchable: false,
+              ),
+            ),
+            Align(
+              alignment: AlignmentDirectional(0, 0.05),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Eliminar',
+                  options: FFButtonOptions(
+                    width: 270,
+                    height: 50,
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    color: Color(0xFF005F96),
+                    textStyle: FlutterFlowTheme.of(context)
+                        .titleMedium
+                        .override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).primaryBtnText,
+                        ),
+                    elevation: 2,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
